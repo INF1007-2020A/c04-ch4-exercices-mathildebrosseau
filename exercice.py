@@ -28,8 +28,10 @@ def get_number_of_char(string: str, char: str) -> int:
 
 
 def get_number_of_words(sentence: str, word: str) -> int:
-    if sentence != None:
+    if (sentence != None and sentence[0] != " "):
         number_of_words = 1
+    else:
+        number_of_words = 0
     for i in range(len(sentence)):
         if sentence[i] == " ":
             number_of_words += 1
@@ -51,7 +53,7 @@ def main() -> None:
 
     print(f"Le nombre d'occurrence de l dans 'hello world!' est : {get_number_of_char(chaine, 'l')}")
     
-    chaine = " Baby shark doo doo doo doo doo doo"
+    chaine = "Baby shark doo doo doo doo doo doo"
     print(f"L'occurence du mot doo dans la chaine {chaine} est: {get_number_of_words(chaine, 'doo')}")
 
 
