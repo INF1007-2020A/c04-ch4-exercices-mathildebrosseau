@@ -21,21 +21,19 @@ def replace_char(string: str, old_char: str, new_char: str) -> str: #même chose
 
 def get_number_of_char(string: str, char: str) -> int:
     char_number = 0
-    for i in range(len(string)):
-        if string[i] == char:
+    for current_char in string:
+        if current_char == char:
             char_number += 1
     return char_number
 
 
 def get_number_of_words(sentence: str, word: str) -> int:
-    if (sentence != None and sentence[0] != " "):
-        number_of_words = 1
-    else:
-        number_of_words = 0
-    for i in range(len(sentence)):
-        if sentence[i] == " ":
-            number_of_words += 1
-    return number_of_words
+    words = sentence.split()
+    word_count = 0
+    for current_word in words:
+        if current_word == word:
+            word_count += 1
+    return word_count
 
 
 def main() -> None:
